@@ -1,0 +1,23 @@
+
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.ck-editor{
+  h1{
+    font-size: 34px !important ;
+    font-weight: 800 !important;
+  }
+  h2{
+    font-size: 25px !important ;
+    font-weight: 600 !important;
+  }
+  .ck-content{
+    @apply min-h-[300px] max-h-[400px] overflow-y-auto;
+  }
+}

@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "normal";
+  src: local("Geist"), url("./Geist-Regular.otf") format("woff");
+}
+@font-face {
+  font-family: "medium";
+  src: local("Geist"), url("./Geist-Medium.otf") format("woff");
+}
+@font-face {
+  font-family: "semibold";
+  src: local("Geist"), url("./Geist-SemiBold.otf") format("woff");
+}
+@font-face {
+  font-family: "bold";
+  src: local("Geist"), url("./Geist-Bold.otf") format("woff");
+}
+/* @font-face {
+  font-family: "extrabold";
+  src: local("Geist"), url("./Geist-Black.otf") format("woff");
+} */

@@ -1,0 +1,133 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CAHAN",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/auth/sign-in": {
+      "post": {
+        "tags": [
+          "General"
+        ],
+        "summary": "SIGN-IN",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "admin@kyriosdev.com",
+                  "password": "login123"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/sign-out": {
+      "post": {
+        "tags": [
+          "General"
+        ],
+        "summary": "SIGN-OUT",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNscXQzdzlpZTAwMDB0M2NnZGJycnRlYTEiLCJlbWFpbCI6ImFkbWluQGt5cmlvc2Rldi5jb20iLCJpYXQiOjE3MDQwMTQ0NjEsImV4cCI6MTcwNDI3MzY2MX0.mVdZt-VwRLF_E2W5NjIbBCvhwfDNop_7k7WBmHGRgHA"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/forgot-password": {
+      "post": {
+        "tags": [
+          "General"
+        ],
+        "summary": "FORGOT-PASSWORD",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "admin@kyriosdev.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/user/update": {
+      "put": {
+        "tags": [
+          "General"
+        ],
+        "summary": "UPDATE PROFILE",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "ADMIN !@#"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNscXQzdzlpZTAwMDB0M2NnZGJycnRlYTEiLCJlbWFpbCI6ImFkbWluQGt5cmlvc2Rldi5jb20iLCJpYXQiOjE3MDQwMTQ0NjEsImV4cCI6MTcwNDI3MzY2MX0.mVdZt-VwRLF_E2W5NjIbBCvhwfDNop_7k7WBmHGRgHA"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

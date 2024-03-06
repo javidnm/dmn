@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum MediaType {
+  NEWS
+  SLIDER
+  CLIENT
+  ACTIVITY
+  COMPANY
+  PROJECT
+  PARTNER
+  SECTOR
+  BRAND
+  OFFICE_BOARD
+  MESSAGE_FROM_FOUNDER
+  THE_HONORARY_PRESIDENT
+  VISION_AND_MISSION
+  ORGANIZATIONAL_CHART
+  CORPORATE_IDENTITY
+  FINANCIAL_STATUS
+  FINANCIAL_PARTNER
+  CSR
+  EVENT
+  SPONSORSHIP
+  HUMAN_RESOURCES
+  VACANCIES
+  CAHAN_IN_THE_WORLD
+}
+
+model User {
+  id       String   @id @default(cuid())
+  name     String
+  email    String   @unique
+  password String
+  OTP      String?
+  session  Session? @relation(name: "sessionToUser")
+}
+
+model Section {
+  id        Int       @id @default(autoincrement())
+  meta      String    @db.Text
+  type      MediaType
+  media     String    @db.Text
+  active    Boolean   @default(true)
+  createdAt DateTime  @default(now())
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  token     String   @db.Text
+  expiresIn DateTime
+  user      User     @relation(name: "sessionToUser", fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
